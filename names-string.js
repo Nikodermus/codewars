@@ -1,5 +1,7 @@
 function list(names) {
     var output = '';
+
+    //Join more than 2 names as required
     if (names.length > 1) {
         for (i in names) {
             if (i == 0) {
@@ -16,12 +18,14 @@ function list(names) {
         */
         return output;
 
-    } else if (names.length == 1) {
+    } //If it is only one name, return it back
+    else if (names.length == 1) {
 
         return names[0].name;
 
 
-    } else {
+    } //If nothing is passed, return a void string
+    else {
         return '';
     }
 }

@@ -1,8 +1,9 @@
 function permutations(string) {
-    ops = [];
-    pre = [];
-    en = [];
+    ops,
+    pre,
+    en,
     pos = [];
+
     // string = string.split('');
 
 
