@@ -1,28 +1,7 @@
 function squareDigits(num) {
-
-    var eachNumber, eachSquare, stringSquare;
-
-    //Parse the parameter to String
-    num = num.toString();
-
-    //Fill the array with every char
-    eachNumber = [];
-    for (var i = 0; i < num.length; i++) {
-        eachNumber[i] = num.charAt(i);
-    }
-
-    //Convert each item in the array, parse it to number and make it a swuare
-    eachSquare = [];
-    for (i in eachNumber) {
-        eachSquare[i] = Number(eachNumber[i]) * Number(eachNumber[i]);
-    }
-
-    //Fill a new string with the square numbers
-    stringSquare = '';
-    for (i in eachSquare) {
-        stringSquare += eachSquare[i].toString();
-    }
-
-    return Number(stringSquare);
-
+    return Number(num //The output will be parsed into number
+        .toString() //Convert to string
+        .split('') //Convert to array
+        .map((x) => Math.pow(Number(x), 2)) //Square every item in the array
+        .join('')); //Join into a single String
 }

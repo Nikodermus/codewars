@@ -1,9 +1,8 @@
 function isIsogram(str) {
-    //Parse to lowercase so it won't cause differences
-    str = str.toLowerCase();
-
-    //Parse to Array
-    str = str.split('');
+    //Parse to lowercase so it won't cause differences, then to an array
+    str = str
+        .toLowerCase()
+        .split('');
 
     //If any letter exists twice, return true or false
     var status = str.some(function (value, index) {
@@ -11,5 +10,4 @@ function isIsogram(str) {
     });
 
     return !status;
-
 }

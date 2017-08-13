@@ -1,6 +1,6 @@
 function zero(number) {
     //Check if a parameter is passed
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 0;
 
     } //If the parameter is a number, send the calculation
@@ -10,7 +10,7 @@ function zero(number) {
 }
 
 function one(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 1;
     } else {
         return whichCalc(number, 1);
@@ -18,7 +18,7 @@ function one(number) {
 }
 
 function two(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 2;
     } else {
         return whichCalc(number, 2);
@@ -26,7 +26,7 @@ function two(number) {
 }
 
 function three(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 3;
     } else {
         return whichCalc(number, 3);
@@ -34,7 +34,7 @@ function three(number) {
 }
 
 function four(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 4;
     } else {
         return whichCalc(number, 4);
@@ -43,7 +43,7 @@ function four(number) {
 
 function five(number) {
 
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 5;
     } else {
         return whichCalc(number, 5);
@@ -52,7 +52,7 @@ function five(number) {
 }
 
 function six(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 6;
     } else {
         return whichCalc(number, 6);
@@ -60,7 +60,7 @@ function six(number) {
 }
 
 function seven(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 7;
     } else {
         return whichCalc(number, 7);
@@ -68,7 +68,7 @@ function seven(number) {
 }
 
 function eight(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 8;
     } else {
         return whichCalc(number, 8);
@@ -76,7 +76,7 @@ function eight(number) {
 }
 
 function nine(number) {
-    if (typeof number == 'undefined') {
+    if (typeof (number) == 'undefined') {
         return 9;
     } else {
         return whichCalc(number, 9);
@@ -101,7 +101,7 @@ function dividedBy(number) {
 }
 
 function whichCalc(number, calc) {
-    //Check which number and operatos was passed as parameters
+    //Check which (number) and operatos was passed as parameters
     if (number[0] == '+') return Number(calc + Number(number[1]));
     if (number[0] == '-') return Number(calc - Number(number[1]));
     if (number[0] == '*') return Number(calc * Number(number[1]));

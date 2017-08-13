@@ -18,5 +18,4 @@ function array_diff(a, b) {
         a.splice(remove[i], 1);
     }
     return a;
-
 }

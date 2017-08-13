@@ -1,17 +1,13 @@
 function alphabetPosition(text) {
     var alphabet, subText, myPos, finalText, newText;
 
-    //Convert to lowercase to avoid differences
-    text = text.toLowerCase();
+    //Convert to lowercase to avoid differences, then into an array
+    subtext = text
+        .toLowerCase()
+        .split('');
 
     //Create the ABC array
     alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-
-    //Take each letter of the function parameter and place it in an array
-    subText = [];
-    for (var i = 0; i <= text.length; i++) {
-        subText[i] = text.charAt(i);
-    }
 
     //Run the array with the parameter and see if it matches any position of the alphabet position, if so, fill a new array with the letter position plus one (Because 0 index)
     finalText = [];

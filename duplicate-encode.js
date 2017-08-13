@@ -1,16 +1,19 @@
 function duplicateEncode(word) {
-    word.toString();
     word = word.toLowerCase();
-    for (var i = 0; i <= word.length; i++) {
-        for (var j = 0; j <= word.length; j++) {
-            if (word.charAt(i) == word.charAt(j)) {
-                word.substring(0, i) + ')' + word.substring(i + 1);
-                word.substring(0, j) + ')' + word.substring(j + 1);
-            }
+    for (i in word) {
 
+        var find = new RegExp('/\'', word.charAt(i), 'g');
+        console.log(word.match(find));
+
+        if (word.match(find) !== null && word.match(find).length > 1) {
+            console.log('2+');
+            word = word.replace(find, ')');
+        } else {
+            console.log(word.charAt(i));
+            word = word.replace(word.charAt(i), '(')
         }
+        console.log(word)
 
-        word = word.replace(!')', '(');
     }
     return word;
 }

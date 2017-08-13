@@ -3,8 +3,7 @@ function GetSum(a, b) {
 
     //If a and b are the same number, there are no numbers in between
     if (a == b) {
-        result = a;
-        return result;
+        return a;
     }
 
     // Check which is the lowest number
@@ -28,15 +27,7 @@ function GetSum(a, b) {
     sum = 0;
     for (var i = 0; i < myArray.length; i++) {
         sum += myArray[i];
-        console.log(myArray[i])
-
     }
 
     return sum;
-
-
-
-
-
-
 }
