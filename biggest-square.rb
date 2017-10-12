@@ -2,7 +2,7 @@ def biggestSquare
    @table = createTable
    @results = createHistograms @table
    @results.each do |max_area|
-    puts "#{max_area * 3}"
+    puts "Best incoming is #{max_area * 3}"
    end
 end
 
@@ -87,8 +87,9 @@ def createHistograms(table)
             end 
           
             @current_area = maximumHistogramArea @histograms[area_ind]
+            #puts @current_area
+           # puts "La max area actual es de #{@max_area} para #{area_ind + 1}"
             if @current_area > @max_area
-                puts "La max area actual es de #{@max_area} para "
                 @max_area = @current_area
             end
         end
@@ -98,6 +99,7 @@ def createHistograms(table)
 end
 
 def maximumHistogramArea histogram
+ 
     @stack = []
 
     #Iterate over each histogram
@@ -111,34 +113,37 @@ def maximumHistogramArea histogram
         else
             if histogram[value_ind] >= histogram[@stack.last]
                 @stack << value_ind
+               
             end
         end
-
     end
-    puts 
+
 
     #Record the values 
     @max_area = 0
-    @original_length = 0
     @original_length = @stack.length
-    for ind in 0...@stack.length
+    for ind in 0...@original_length
         
         @area = 0
         @top_value = @stack.pop
         if @stack.length == 0
-            puts "area = #{histogram[@top_value]} * #{ @original_length-1}"
             @area = histogram[@top_value] * (@original_length - 1)
-            @max_area = @area if @area > @max_area 
+            puts "#{@stack} = #{histogram[@top_value]} * #{ @original_length-1} = #{@area}"
+            if @area > @max_area 
+                @max_area = @area 
+            end
         else
-            puts "area = #{@top_value} * (#{@original_length-1} - #{@stack.last} - 1)"
             @area = @top_value * ( (@original_length - 1) - @stack.last - 1)
-            @max_area = @area if @area > @max_area 
+            puts "#{@stack} = #{@top_value} * (#{@original_length-1} - #{@stack.last} - 1)  = #{@area}"
+            if @area > @max_area 
+                @max_area = @area
+        
+            end
         end
    
     end
-    puts @max_area
     @max_area
 end
 
-maximumHistogramArea [1,0,1,0,1]
+maximumHistogramArea [0,1,0,0,0]
 #biggestSquare
