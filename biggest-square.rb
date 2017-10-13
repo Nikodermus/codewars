@@ -97,53 +97,64 @@ def createHistograms(table)
     end
     @histograms_max_area
 end
-
+#[2,1,3,4,5]
 def maximumHistogramArea histogram
  
     @stack = []
-
+    @top_value = 0
+    @max_area = 0
+    @area = 0
+    @index = 0
     #Iterate over each histogram
-    for value_ind in 0...histogram.length
-
+   while @index < histogram.length 
+        puts @index
         #The first time add the index to the stach
-        if value_ind == 0
-            @stack << value_ind 
+            if @stack.empty? or histogram[@stack.last] <= histogram[@index]
+                @stack << @index
+                @index += 1
+        
+            #Next times compare wether the value of the index is bigger than the top of the stack
+            else
+                @top_value = @stack.pop
+                #Area formula for empty stack
+                if @stack.empty?
+                    @area = histogram[@top_value] * @index 
+                    
+                    #Area formula for filled stack
+                else
+                    @area = histogram[@top_value] * (@index  - @stack.last - 1)
+                end
 
-        #Next times compare wether the value of the index is bigger than the top of the stack
-        else
-            if histogram[value_ind] >= histogram[@stack.last]
-                @stack << value_ind
-               
-            end
+                #Largest current area
+                if @area > @max_area 
+                    @max_area = @area
+                end
         end
+        print @stack
+        puts ' '
     end
-
 
     #Record the values 
-    @max_area = 0
-    @original_length = @stack.length
-    for ind in 0...@original_length
-        
-        @area = 0
+
+    while @stack.any?
         @top_value = @stack.pop
-        if @stack.length == 0
-            @area = histogram[@top_value] * (@original_length - 1)
-            puts "#{@stack} = #{histogram[@top_value]} * #{ @original_length-1} = #{@area}"
-            if @area > @max_area 
-                @max_area = @area 
-            end
-        else
-            @area = @top_value * ( (@original_length - 1) - @stack.last - 1)
-            puts "#{@stack} = #{@top_value} * (#{@original_length-1} - #{@stack.last} - 1)  = #{@area}"
-            if @area > @max_area 
-                @max_area = @area
+        #Area formula for empty stack
+        if @stack.empty?
+            @area = histogram[@top_value] * @index
         
-            end
+        #Area formula for filled stack
+        else
+            @area = histogram[@top_value] * ( @index  - @stack.last - 1)
         end
-   
+
+        #Largest current area
+        if @area > @max_area 
+            @max_area = @area
+        end
+
     end
-    @max_area
+     @max_area
 end
 
-maximumHistogramArea [0,1,0,0,0]
-#biggestSquare
+#maximumHistogramArea [2,1,2]
+biggestSquare
