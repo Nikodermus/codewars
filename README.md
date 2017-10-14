@@ -22,11 +22,14 @@
 - Square Every Digit   
 - Beginner Series #3 Sum of Numbers   
 - Multiply   
+
 ## Unfinished yet:   
 - Title Case   
 - DuplicateCode   
 - Permutations   
 - Human Time 2  
+- Drunk Jailer ([COJ](http://coj.uci.cu/24h/problem.xhtml?pid=1118))
+- Virtual Friends ([COJ](http://coj.uci.cu/24h/problem.xhtml?pid=1094))
    
 ## Not uploaded:   
 - Begginer 5   
