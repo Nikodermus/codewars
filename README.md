@@ -24,13 +24,15 @@
 - Multiply
 - Palindrome number
 
+## Not uploaded:
+- Begginer 5
+- Scramble
+- Who is next?  (Runtime issue)
+
 ## Unfinished yet:
 - Title Case
 - DuplicateCode
 - Permutations
 - Human Time 2
-
-## Not uploaded:
-- Begginer 5
-- Scramble
-- Who is next?
+- Drunk Jailer ([COJ](http://coj.uci.cu/24h/problem.xhtml?pid=1118))
+- Virtual Friends ([COJ](http://coj.uci.cu/24h/problem.xhtml?pid=1094))
