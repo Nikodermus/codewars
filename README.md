@@ -28,6 +28,7 @@
 - Begginer 5
 - Scramble
 - Who is next?  (Runtime issue)
+- Find Superman
 
 ## Unfinished yet:
 - Title Case
